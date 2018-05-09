@@ -26,4 +26,14 @@
 <bean name="employeeAroundAspect" class="com.co.ceiba.springaop.aspect.EmployeeAroundAspect" />
 <bean name="employeeAnnotationAspect" class="com.co.ceiba.springaop.aspect.EmployeeAnnotationAspect" />
 
+<bean name="employeeXMLConfigAspect" class="com.co.ceiba.springaop.aspect.EmployeeXMLConfigAspect" />
+
+<!-- Spring AOP XML Configuration -->
+<aop:config>
+	<aop:aspect ref="employeeXMLConfigAspect" id="employeeXMLConfigAspectID" order="1">
+		<aop:pointcut expression="execution(* com.co.ceiba.springaop.model.Employee.getName())" id="getNamePointcut"/>
+		<aop:around method="employeeAroundAdvice" pointcut-ref="getNamePointcut" arg-names="proceedingJoinPoint"/>
+	</aop:aspect>
+</aop:config>
+
 </beans>

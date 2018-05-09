@@ -11,5 +11,8 @@ repositories {
 dependencies {
 	compile('org.springframework:spring-context:5.0.6.RELEASE')
 	compile('org.aspectj:aspectjrt:1.9.1')
+	compile('org.aspectj:aspectjtools:1.9.1')
+	compile('org.slf4j:slf4j-api:1.7.25')
+	testCompile('ch.qos.logback:logback-classic:1.2.3')
 	testCompile('junit:junit:4.12')
 }
